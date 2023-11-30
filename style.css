@@ -68,4 +68,53 @@ body, html {
 #about {
     margin-top: 50px;
 }
+#contact {
+    margin-top: 50px;
+}
 
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+}
+.modal-content {
+    background-color: #ffffff; /* Kolor tła modalu */
+    color: #495057; /* Kolor tekstu modalu */
+}
+
+.contact-columns {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.contact-column {
+    text-align: center;
+}
+
+footer {
+    background-color: #343a40; 
+    color: #ffffff; 
+    margin: 10px;
+}
+#about {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #ffffff; /* Kolor tła sekcji "About Us" */
+    border: 1px solid #dee2e6; /* Obramowanie sekcji */
+    border-radius: 10px;
+}
+
+#about h2 {
+    color: #007bff; /* Kolor nagłówka sekcji "About Us" */
+}
+
+#about p {
+    color: #495057; /* Kolor tekstu w sekcji "About Us" */
+}
