@@ -1,6 +1,5 @@
 async function searchRestaurants() {
     const cityInput = document.getElementById('cityInput').value;
-
     const url = `https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation?query=${cityInput}`;
     const options = {
         method: 'GET',
@@ -14,39 +13,42 @@ async function searchRestaurants() {
         const response = await fetch(url, options);
         const result = await response.json();
 
-        if (result.status === true) {
-            displayResult(result.data);
+        if (result.status) {
+            displayRestaurants(result.data);
+            playBackgroundMusic();
         } else {
-            showModal('Error', result.message);
+            throw new Error(result.message);
         }
     } catch (error) {
         console.error(error);
-        showModal('Error', 'An error occurred while fetching data.');
+        showModal('Error occurred while fetching restaurant data. Please try again later.');
     }
 }
 
-function displayResult(data) {
-    const restaurantList = document.getElementById('restaurantList');
-    restaurantList.innerHTML = ''; 
+function displayRestaurants(data) {
+    const restaurantListElement = document.getElementById('restaurantList');
+    restaurantListElement.innerHTML = '';
 
     data.forEach(restaurant => {
         const listItem = document.createElement('li');
-        listItem.classList.add('list-group-item');
         listItem.textContent = restaurant.localizedName;
-
-        restaurantList.appendChild(listItem);
+        restaurantListElement.appendChild(listItem);
     });
 }
 
-function showModal(title, message) {
-    const modalTitle = document.getElementById('modalTitle');
-    const modalMessage = document.getElementById('modalMessage');
 
-    modalTitle.textContent = title;
-    modalMessage.textContent = message;
+function showModal(message) {
+    const modalMessageElement = document.getElementById('modalMessage');
+
+    
+    if (modalMessageElement) {
+        modalMessageElement.textContent = message;
+    }
 
     $('#myModal').modal('show');
 }
 
 
-searchRestaurants();
+document.addEventListener('DOMContentLoaded', function () {
+    searchRestaurants(); 
+});
