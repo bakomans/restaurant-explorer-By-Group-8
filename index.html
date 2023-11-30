@@ -42,7 +42,7 @@
                     <label for="cityInput">Enter City:</label>
                     <input type="text" class="form-control" id="cityInput">
                 </div>
-                <button class="btn btn-primary" onclick="searchRestaurants()">Search</button>
+                <button id="searchBtn" class="btn btn-primary">Search</button>
             </div>
         </div>
         <div class="welcome-container container text-center">
@@ -73,11 +73,6 @@
         </div>
     </div>
 
-    <section id="newsSection" class="container mt-5">
-        <h2 class="text-center">Latest News</h2>
-        <div id="newsList" class="row"></div>
-    </section>
-
     <section id="about" class="container">
         <h2>About Us</h2>
         <p>We are a team of three aspiring developers who came together to create Foodie-Mate. Our goal is to provide users with a seamless experience in discovering restaurants in their city. Here are the technologies we used to build this website:</p>
@@ -87,10 +82,11 @@
             <li>JavaScript</li>
             <li>Bootstrap</li>
             <li>jQuery</li>
-            <li>RapidAPI</li>
+            <li>Geoapify API</li>
         </ul>
         <p>We would like to express our sincere gratitude for visiting our website. Your support means the world to us. Thank you!</p>
     </section>
+
     <section id="contact" class="container text-center">
         <h2>Contact Us</h2>
         <p>Feel free to connect with us:</p>
@@ -101,7 +97,6 @@
                 <a href="https://github.com/username1" target="_blank">GitHub</a>
                 <img src="media/linkedin.png" alt="LinkedIn Icon" class="contact-icon">
                 <a href="https://www.linkedin.com/in/username1" target="_blank">LinkedIn</a>
-                
             </div>
             <div class="col-md-4">
                 <p>James</p>
@@ -109,7 +104,6 @@
                 <a href="https://github.com/username2" target="_blank">GitHub</a>
                 <img src="media/linkedin.png" alt="LinkedIn Icon" class="contact-icon">
                 <a href="https://www.linkedin.com/in/username2" target="_blank">LinkedIn</a>
-                
             </div>
             <div class="col-md-4">
                 <p>Sundas</p>
@@ -117,15 +111,16 @@
                 <a href="https://github.com/username3" target="_blank">GitHub</a>
                 <img src="media/linkedin.png" alt="LinkedIn Icon" class="contact-icon">
                 <a href="https://www.linkedin.com/in/username3" target="_blank">LinkedIn</a>
-                
             </div>
         </div>
     </section>
+
     <footer class="bg-dark text-white text-center py-3">
         <div class="container">
             <p>&copy; 2023 Foodie-Mate. All rights reserved.</p>
         </div>
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
