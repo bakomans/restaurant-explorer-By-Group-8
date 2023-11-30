@@ -1,0 +1,74 @@
+.container-layout {
+    display: flex;
+    width: 100%; /* Full width of the viewport */
+    margin-left: 200px;
+    margin-right: 200px;
+    /* margin-right: 40px; */
+    justify-content: center;
+    /* box-sizing: border-box; */
+    
+    
+}
+
+.card, .side-panel {
+   
+    /* Remove any margin or padding that could cause overflow */
+    flex: 1; /* Flex grow */
+    max-width: calc(50% - 20px); /* Maximum width with some space between */
+    box-sizing: border-box;
+}
+
+.card2 {
+    width: 400px;
+    margin-left: 50px;
+    border:olive;
+}
+
+.card {
+   min-width: 300px;
+}
+
+
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    justify-content: space-evenly;
+    /* margin-right: 100px; */
+    align-items: center;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 10px;
+
+}
+
+
+
+.rating {
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.stars {
+    padding-right: 5px;
+}
+
+@media (max-width: 768px) {
+    .container-layout {
+        flex-direction: column; /* Stack the flex items vertically */
+        margin-left: 5px; /* Smaller right padding for narrow screens */
+        /* align-items: center; Cller right padding for narrow screens */
+    }
+
+    .card, .side-panel {
+        width: 100%;/* Optional: Adjust max-width for smaller screens */
+        flex-basis: auto;
+    }
+
+    .card2 {
+        
+        margin-left: 5px;
+        
+    }
+}
+
