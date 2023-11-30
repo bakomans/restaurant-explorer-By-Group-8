@@ -18,13 +18,18 @@ body, html {
     left: 0;
 }
 
-#searchContainer {
-    text-align: center;
+#searchContainer, .welcome-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    padding: 10px;
+    margin: 20px;;
+}
+
+.welcome-container {
+    z-index: 1; 
 }
 
 #restaurantList {
@@ -38,3 +43,27 @@ body, html {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+.welcome-container {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 1;
+    font-weight: 600;
+}
+
+
+#restaurantList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#restaurantList li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+

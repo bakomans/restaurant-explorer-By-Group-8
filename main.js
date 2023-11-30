@@ -1,11 +1,6 @@
 async function searchRestaurants() {
     const cityInput = document.getElementById('cityInput').value;
 
-    if (cityInput.trim() === '') {
-        displayErrorModal('Please enter a city.');
-        return;
-    }
-
     const url = `https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation?query=${cityInput}`;
     const options = {
         method: 'GET',
@@ -18,29 +13,40 @@ async function searchRestaurants() {
     try {
         const response = await fetch(url, options);
         const result = await response.json();
-        displayResult(result.data);
+
+        if (result.status === true) {
+            displayResult(result.data);
+        } else {
+            showModal('Error', result.message);
+        }
     } catch (error) {
         console.error(error);
-        displayErrorModal('An error occurred while fetching data.');
+        showModal('Error', 'An error occurred while fetching data.');
     }
 }
 
 function displayResult(data) {
     const restaurantList = document.getElementById('restaurantList');
-    restaurantList.innerHTML = '';
+    restaurantList.innerHTML = ''; 
 
     data.forEach(restaurant => {
         const listItem = document.createElement('li');
-        listItem.textContent = restaurant.name;
+        listItem.classList.add('list-group-item');
+        listItem.textContent = restaurant.localizedName;
+
         restaurantList.appendChild(listItem);
     });
 }
 
-function displayErrorModal(message) {
+function showModal(title, message) {
+    const modalTitle = document.getElementById('modalTitle');
     const modalMessage = document.getElementById('modalMessage');
+
+    modalTitle.textContent = title;
     modalMessage.textContent = message;
 
-    $('#myModal').modal('show'); // Wywołaj modal Bootstrap
+    $('#myModal').modal('show');
 }
+
 
 searchRestaurants();
