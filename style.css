@@ -65,5 +65,7 @@ body, html {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
+#about {
+    margin-top: 50px;
+}
 
