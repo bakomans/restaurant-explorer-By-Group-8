@@ -3,31 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Search</title>
-    <!-- Dodajemy link do Bootstrap CSS -->
+    <title>Foodie-Mate: Discover Restaurants</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="searchContainer" class="container">
-        <h1>Restaurant Search</h1>
-        <div class="form-group">
-            <label for="cityInput">Enter City:</label>
-            <input type="text" class="form-control" id="cityInput">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Foodie-Mate</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="video-container">
+            <video autoplay muted loop id="video-background">
+                <source src="media/pexels-cristian-rojas-7772308 (Original).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div id="searchContainer" class="container text-center">
+                <h1>Restaurant Search</h1>
+                <div class="form-group">
+                    <label for="cityInput">Enter City:</label>
+                    <input type="text" class="form-control" id="cityInput">
+                </div>
+                <button class="btn btn-primary" onclick="searchRestaurants()">Search</button>
+            </div>
         </div>
-        <button class="btn btn-primary" onclick="searchRestaurants()">Search</button>
-    </div>
+        <div class="container text-center">
+            <h2>Welcome to Foodie-Mate</h2>
+            <p>Discover restaurants in your city with the power of APIs!</p>
+        </div>
+    </header>
 
     <div class="container">
         <h2>Restaurant Search Results</h2>
         <ul id="restaurantList" class="list-group"></ul>
     </div>
 
-    <!-- Dodajemy link do Bootstrap JS oraz Popper.js i jQuery -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Error</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p id="modalMessage"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
     <script src="main.js"></script>
 </body>
 </html>
+

@@ -2,7 +2,7 @@ async function searchRestaurants() {
     const cityInput = document.getElementById('cityInput').value;
 
     if (cityInput.trim() === '') {
-        alert('Please enter a city.');
+        displayErrorModal('Please enter a city.');
         return;
     }
 
@@ -18,10 +18,10 @@ async function searchRestaurants() {
     try {
         const response = await fetch(url, options);
         const result = await response.json();
-        console.log(result); // Dodaj ten log, aby sprawdzić dane z API
         displayResult(result.data);
     } catch (error) {
         console.error(error);
+        displayErrorModal('An error occurred while fetching data.');
     }
 }
 
@@ -31,10 +31,16 @@ function displayResult(data) {
 
     data.forEach(restaurant => {
         const listItem = document.createElement('li');
-        listItem.textContent = restaurant.localizedName; // Dostosowujemy do struktury danych
+        listItem.textContent = restaurant.name;
         restaurantList.appendChild(listItem);
     });
 }
 
+function displayErrorModal(message) {
+    const modalMessage = document.getElementById('modalMessage');
+    modalMessage.textContent = message;
+
+    $('#myModal').modal('show'); // Wywołaj modal Bootstrap
+}
 
 searchRestaurants();
