@@ -119,3 +119,15 @@ footer {
 #about p {
     color: #495057; /* Kolor tekstu w sekcji "About Us" */
 }
+#newsSection {
+    background-color: #f8f9fa;
+    padding: 30px 0;
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
