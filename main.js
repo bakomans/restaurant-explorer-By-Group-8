@@ -13,18 +13,22 @@ function displayResults(restaurants) {
     const country = restaurant.properties.country;
     const region = restaurant.properties.district;
 
+    const addressLine1 = restaurant.properties.address_line1 || "";
+    const addressLine2 = restaurant.properties.address_line2 || "";
+    const address = `${addressLine1}, ${addressLine2}`.trim();
+
     const listItem = document.createElement("li");
     listItem.className = "list-group-item";
 
     const restaurantInfo = document.createElement("div");
     restaurantInfo.className = "restaurant-info";
-    restaurantInfo.innerHTML = `<strong>${name}</strong> - ${country}, ${region}`;
+    restaurantInfo.innerHTML = `<strong>${name}</strong> - ${country}, ${region}<br>${address}</div>`;
 
     const copyButton = document.createElement("button");
     copyButton.className = "btn btn-outline-secondary copy-btn";
-    copyButton.innerHTML = "Share with friends";
+    copyButton.innerHTML = "Share with Friends";
     copyButton.addEventListener("click", function () {
-      copyToClipboard(name, country, region);
+      copyToClipboard(name, country, region, address);
     });
 
     listItem.appendChild(restaurantInfo);
@@ -148,8 +152,8 @@ async function geocodeAutocomplete(city) {
     console.error("Geocoding Autocomplete error:", error);
   }
 }
-function copyToClipboard(name, country, region) {
-  const textToCopy = `Restaurant: ${name}, Address: ${country}, ${region}`;
+function copyToClipboard(name, country, region, address) {
+  const textToCopy = `Restaurant: ${name}, Address: ${address}, ${country}, ${region}`;
 
   const textarea = document.createElement("textarea");
   textarea.value = textToCopy;
