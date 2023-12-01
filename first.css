@@ -158,3 +158,29 @@ footer {
     font-weight: bold; 
     color: #333; 
 }
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.list-group-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.restaurant-info {
+    flex: 1;
+}
+
+.restaurant-info strong {
+    font-weight: bold;
+    color:black;
+}

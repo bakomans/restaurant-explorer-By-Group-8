@@ -19,10 +19,7 @@ function displayResults(restaurants) {
 
     const listItem = document.createElement("li");
     listItem.className = "list-group-item";
-
-    const restaurantInfo = document.createElement("div");
-    restaurantInfo.className = "restaurant-info";
-    restaurantInfo.innerHTML = `<strong>${name}</strong> - ${country}, ${region}<br>${address}</div>`;
+    listItem.innerHTML = `<div class="restaurant-info"><strong>${name}</strong> - ${country}, ${region}<br>${address}</div>`;
 
     const copyButton = document.createElement("button");
     copyButton.className = "btn btn-outline-secondary copy-btn";
@@ -31,10 +28,13 @@ function displayResults(restaurants) {
       copyToClipboard(name, country, region, address);
     });
 
-    listItem.appendChild(restaurantInfo);
     listItem.appendChild(copyButton);
-
     restaurantList.appendChild(listItem);
+
+    
+    setTimeout(() => {
+      listItem.classList.add("active");
+    }, index * 100); 
   });
 }
 
