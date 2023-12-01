@@ -26,11 +26,13 @@ body, html {
     transform: translate(-50%, -50%);
     color: white;
     padding: 10px;
-    margin: 20px;;
+    margin: 20px;
+    text-align: center;
 }
 
 .welcome-container {
     z-index: 1; 
+    text-align: center;
 }
 
 #restaurantList {
@@ -41,7 +43,7 @@ body, html {
 #restaurantList li {
     margin: 10px 0;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(204, 204, 204);
     border-radius: 5px;
 }
 .welcome-container {
@@ -85,8 +87,8 @@ body, html {
     margin: 0 10px;
 }
 .modal-content {
-    background-color: #ffffff; /* Kolor tła modalu */
-    color: #495057; /* Kolor tekstu modalu */
+    background-color: #ffffff; 
+    color: #495057; 
 }
 
 .contact-columns {
@@ -107,17 +109,17 @@ footer {
 #about {
     margin-top: 50px;
     padding: 20px;
-    background-color: #ffffff; /* Kolor tła sekcji "About Us" */
-    border: 1px solid #dee2e6; /* Obramowanie sekcji */
+    background-color: #ffffff; 
+    border: 1px solid #dee2e6; 
     border-radius: 10px;
 }
 
 #about h2 {
-    color: #007bff; /* Kolor nagłówka sekcji "About Us" */
+    color: #007bff; 
 }
 
 #about p {
-    color: #495057; /* Kolor tekstu w sekcji "About Us" */
+    color: #495057; 
 }
 #newsSection {
     background-color: #f8f9fa;
@@ -130,4 +132,29 @@ footer {
 
 .card:hover {
     transform: scale(1.05);
+}
+.copy-btn {
+    margin-left: 0px;
+    color: #fff; 
+    background-color: #007bff; 
+    margin-top:5px;
+
+}
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.restaurant-info {
+    flex: 1;
+}
+
+.restaurant-info strong {
+    font-weight: bold; 
+    color: #333; 
 }

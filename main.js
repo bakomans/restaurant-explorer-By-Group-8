@@ -6,7 +6,7 @@ function showModal(message) {
 
 function displayResults(restaurants) {
   const restaurantList = document.getElementById("restaurantList");
-  restaurantList.innerHTML = ""; 
+  restaurantList.innerHTML = "";
 
   restaurants.forEach((restaurant, index) => {
     const name = restaurant.properties.name;
@@ -15,7 +15,20 @@ function displayResults(restaurants) {
 
     const listItem = document.createElement("li");
     listItem.className = "list-group-item";
-    listItem.innerHTML = `<strong>${name}</strong> - ${country}, ${region}`;
+
+    const restaurantInfo = document.createElement("div");
+    restaurantInfo.className = "restaurant-info";
+    restaurantInfo.innerHTML = `<strong>${name}</strong> - ${country}, ${region}`;
+
+    const copyButton = document.createElement("button");
+    copyButton.className = "btn btn-outline-secondary copy-btn";
+    copyButton.innerHTML = "Share with friends";
+    copyButton.addEventListener("click", function () {
+      copyToClipboard(name, country, region);
+    });
+
+    listItem.appendChild(restaurantInfo);
+    listItem.appendChild(copyButton);
 
     restaurantList.appendChild(listItem);
   });
@@ -134,6 +147,20 @@ async function geocodeAutocomplete(city) {
   } catch (error) {
     console.error("Geocoding Autocomplete error:", error);
   }
+}
+function copyToClipboard(name, country, region) {
+  const textToCopy = `Restaurant: ${name}, Address: ${country}, ${region}`;
+
+  const textarea = document.createElement("textarea");
+  textarea.value = textToCopy;
+  document.body.appendChild(textarea);
+  textarea.select();
+
+  document.execCommand('copy');
+
+  document.body.removeChild(textarea);
+
+  showModal('Restaurant information copied to clipboard!');
 }
 
 document.addEventListener("DOMContentLoaded", function () {
