@@ -227,18 +227,17 @@ footer {
     margin-right: 10px;
 }
 
-/* Dodano animację przy najechaniu */
 #restaurantList li:hover {
     background-color: #f8f9fa;
     transform: scale(1.05);
 }
 
-/* Dodano styl do tekstu wewnątrz elementu listy */
+
 #restaurantList li span {
-    flex: 1; /* Elastyczność dla tekstu, aby zajmował dostępną przestrzeń */
+    flex: 1; 
 }
 
-/* Additional styles for the overall container */
+
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -261,7 +260,7 @@ footer {
     float: right;
   }
   .list-group-item.card .copy-btn {
-    margin-left: auto; /* Ustawienie marginesu z lewej strony na "auto" przeniesie element na prawą stronę */
+    margin-left: auto; 
     color: #fff;
     background-color: #007bff;
     margin-top: 5px;
