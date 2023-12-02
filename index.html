@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="first.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="icon" href="media/icons8-home-32.png" type="image/x-icon">
 </head>
 <body>
@@ -60,7 +61,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Error</h4>
+                    <h4 class="modal-title">Info</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -76,14 +77,14 @@
     <section id="about" class="container">
         <h2>About Us</h2>
         <p>We are a team of three aspiring developers who came together to create Foodie-Mate. Our goal is to provide users with a seamless experience in discovering restaurants in their city. Here are the technologies we used to build this website:</p>
-        <ul>
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
-            <li>Bootstrap</li>
-            <li>jQuery</li>
-            <li>Geoapify API</li>
-        </ul>
+        <ul id="restaurantList">
+            <li><img src="media/html.png" alt="HTML5 Icon"> HTML5</li>
+            <li><img src="media/css-3.png" alt="CSS3 Icon"> CSS3</li>
+            <li><img src="media/java-script.png" alt="JavaScript Icon"> JavaScript</li>
+            <li><img src="media/bootstrap.png" alt="Bootstrap Icon"> Bootstrap</li>
+            <li><img src="media/308442_front-end_javascript_jquery_js_library_icon.png" alt="jQuery Icon"> jQuery</li>
+            <li><img src="media/api.png" alt="Geoapify API Icon"> Geoapify API</li>
+        </ul> </ul>
         <p>We would like to express our sincere gratitude for visiting our website. Your support means the world to us. Thank you!</p>
     </section>
 
@@ -128,6 +129,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="main.js"></script>
     <script src="qp.js" defer></script>
+    <script src="map.js" defer></script>
+    
 
 </body>
 </html>

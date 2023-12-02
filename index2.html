@@ -6,6 +6,7 @@
     <title>Foodie-Mate: Discover Restaurants</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -27,7 +28,7 @@
             </ul>
         </div>
     </nav>
-
+    
     <div class="btn-group">
         <button type="button" class="btn btn-warning rounded" >Italian</button>
         <button type="button" class="btn btn-warning rounded">Chinese</button>
@@ -36,56 +37,26 @@
         <button type="button" class="btn btn-warning rounded">Thai</button>
     </div>
 
-    <!--  -->
     <h1>Query Params</h1>
     <div id="query-param-div"></div>
-<!-- ------------------------- -->
 
     <div class="container">
-      <h2>Restaurant Search Results</h2>
-      <ul id="restaurantList" class="list-group"></ul>
-  </div>
-
- <div class="wrapper">
-   <div class="card-container-fluid">
-      <div class="card m-3">
-        <img src="media/indian-img-2.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Restaurant name </h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-body-secondary">Rating can go here</small></p>
+        <h2>Restaurant Search Results</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <ul id="restaurantList" class="list-group"></ul>
+            </div>
+            <div class="col-md-6">
+                <div id="map" style="height: 400px;"></div>
+            </div>
         </div>
-      </div>
-      <div class="card m-3">
-        <img src="media/indian-img-2.jpg" class="card-img-bottom" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Another restaurant</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-body-secondary">rating can go here</small></p>
-        </div>
-      </div>
-      <div class="card m-3">
-        <img src="media/indian-img-2.jpg" class="card-img-bottom" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Another restaurant</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-body-secondary">rating can go here</small></p>
-        </div>
-      </div>
     </div>
-
-      <div class="map-container">
-        <!-- <img src="media/map-placeholder.jpg" class="rounded" alt="..."> -->
-        
-      </div>
-    </div>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
     <script src="main.js"></script>
     <script src="qp.js" defer></script>
-  
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="map.js" defer></script>
 </body>
 </html>
