@@ -9,16 +9,15 @@ function displayResults(restaurants) {
   restaurantList.innerHTML = "";
 
   restaurants.forEach((restaurant, index) => {
-    const name = restaurant.properties.name;
-    const country = restaurant.properties.country;
-    const region = restaurant.properties.district;
-    const amenity = restaurant.properties.datasource.raw.amenity;
-    const cuisine = restaurant.properties.datasource.raw.cuisine;
-    const openingHours = restaurant.properties.datasource.raw.opening_hours;
-    const website = restaurant.properties.datasource.raw.website;
-    const phoneNum= restaurant.properties.datasource.raw.phone;
-    const wheelchair= restaurant.properties.datasource.raw.wheelchair;
-
+    const name = restaurant.properties.name || "Unknown Name";
+    const country = restaurant.properties.country || "Unknown Country";
+    const region = restaurant.properties.district || "Unknown Region";
+    const amenity = restaurant.properties.datasource.raw.amenity || "Unknown Amenity";
+    const cuisine = restaurant.properties.datasource.raw.cuisine || "Unknown Cuisine";
+    const openingHours = restaurant.properties.datasource.raw.opening_hours || "Unknown Opening Hours";
+    const website = restaurant.properties.datasource.raw.website || "#";
+    const phoneNum = restaurant.properties.datasource.raw.phone || "Unknown Phone Number";
+    const wheelchair = restaurant.properties.datasource.raw.wheelchair || "Wheelchair information not available";
 
     const addressLine1 = restaurant.properties.address_line1 || "";
     const addressLine2 = restaurant.properties.address_line2 || "";
@@ -26,7 +25,15 @@ function displayResults(restaurants) {
 
     const listItem = document.createElement("li");
     listItem.className = "list-group-item";
-    listItem.innerHTML = `<div class="restaurant-info"><strong>${name}</strong> - ${country}, ${region}<br>${address}</div>`;
+    listItem.innerHTML = `<div class="restaurant-info">
+      <strong>${name}</strong> - ${country}, ${region}<br>
+      ${address}<br>
+      Amenity: ${amenity}, Cuisine: ${cuisine}<br>
+      Opening Hours: ${openingHours}<br>
+      <a href="${website}" target="_blank">Website</a><br>
+      Phone: ${phoneNum}<br>
+      Wheelchair: ${wheelchair}
+    </div>`;
 
     const copyButton = document.createElement("button");
     copyButton.className = "btn btn-outline-secondary copy-btn";
@@ -38,12 +45,27 @@ function displayResults(restaurants) {
     listItem.appendChild(copyButton);
     restaurantList.appendChild(listItem);
 
-    
     setTimeout(() => {
       listItem.classList.add("active");
-    }, index * 100); 
+    }, index * 100);
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const searchButton = document.getElementById("searchBtn");
+  if (searchButton) {
+    searchButton.addEventListener("click", function () {
+      const cityInput = document.getElementById("cityInput").value;
+      console.log(cityInput);
+
+      // Assuming searchPlaces is a synchronous function
+      searchPlaces(cityInput);
+
+      // Construct the URL with the query parameter
+      window.location.href = 'index2.html?q=' + encodeURIComponent(cityInput);
+    });
+  }
+});
 
 async function geocodeCity(city) {
   const apiKey = "ed0c087649204f6db62717517ed42adc";
