@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Foodie-Mate</a>
@@ -30,9 +28,9 @@
             </ul>
         </div>
     </nav>
-
+    
     <div class="btn-group">
-        <button type="button" class="btn btn-warning rounded">Italian</button>
+        <button type="button" class="btn btn-warning rounded" >Italian</button>
         <button type="button" class="btn btn-warning rounded">Chinese</button>
         <button type="button" class="btn btn-warning rounded">Turkish</button>
         <button type="button" class="btn btn-warning rounded">Indian</button>
@@ -60,18 +58,5 @@
     <script src="qp.js" defer></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="map.js" defer></script>
-
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-           
-            var mymap = L.map('map').setView([0, 0], 2);
-
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors'
-            }).addTo(mymap);
-        });
-    </script>
 </body>
-
 </html>
