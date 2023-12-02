@@ -2,6 +2,10 @@ body, html {
     height: 100%;
     margin: 0;
 }
+#restaurantList {
+    list-style-type: none;
+    padding: 0;
+}
 
 .video-container {
     position: relative;
@@ -183,4 +187,59 @@ footer {
 .restaurant-info strong {
     font-weight: bold;
     color:black;
+}
+#about {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#about h2 {
+    color: #007bff;
+}
+
+#about p {
+    color: #495057;
+    margin-bottom: 20px;
+}
+
+#restaurantList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#restaurantList li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#restaurantList li img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* Dodano animację przy najechaniu */
+#restaurantList li:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.05);
+}
+
+/* Dodano styl do tekstu wewnątrz elementu listy */
+#restaurantList li span {
+    flex: 1; /* Elastyczność dla tekstu, aby zajmował dostępną przestrzeń */
+}
+
+/* Additional styles for the overall container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
 }
