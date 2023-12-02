@@ -119,7 +119,7 @@ footer {
 }
 
 #about h2 {
-    color: #007bff; 
+    color: #829ebb; 
 }
 
 #about p {
@@ -242,4 +242,27 @@ footer {
 .container {
     max-width: 800px;
     margin: 0 auto;
+}
+.list-group-item.card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .list-group-item.card .restaurant-info {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .list-group-item.card .info-line {
+    margin-bottom: 5px;
+  }
+  
+  .list-group-item.card .copy-btn {
+    float: right;
+  }
+  .list-group-item.card .copy-btn {
+    margin-left: auto; /* Ustawienie marginesu z lewej strony na "auto" przeniesie element na prawą stronę */
+    color: #fff;
+    background-color: #007bff;
+    margin-top: 5px;
 }

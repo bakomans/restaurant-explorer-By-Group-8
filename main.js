@@ -24,15 +24,18 @@ function displayResults(restaurants) {
     const address = `${addressLine1}, ${addressLine2}`.trim();
 
     const listItem = document.createElement("li");
-    listItem.className = "list-group-item";
+    listItem.className = "list-group-item card d-flex justify-content-between align-items-center";
     listItem.innerHTML = `<div class="restaurant-info">
-      <strong>${name}</strong> - ${country}, ${region}<br>
-      ${address}<br>
-      Amenity: ${amenity}, Cuisine: ${cuisine}<br>
-      Opening Hours: ${openingHours}<br>
-      <a href="${website}" target="_blank">Website</a><br>
-      Phone: ${phoneNum}<br>
-      Wheelchair: ${wheelchair}
+      <h5 class="card-title text-center">${name}</h5>
+      <div class="info-line"><strong>Country:</strong> ${country}</div>
+      <div class="info-line"><strong>Region:</strong> ${region}</div>
+      <div class="info-line"><strong>Address:</strong> ${address}</div>
+      <div class="info-line"><strong>Amenity:</strong> ${amenity}</div>
+      <div class="info-line"><strong>Cuisine:</strong> ${cuisine}</div>
+      <div class="info-line"><strong>Opening Hours:</strong> ${openingHours}</div>
+      <div class="info-line"><strong>Website:</strong> <a href="${website}" target="_blank">${website}</a></div>
+      <div class="info-line"><strong>Phone:</strong> ${phoneNum}</div>
+      <div class="info-line"><strong>Wheelchair:</strong> ${wheelchair}</div>
     </div>`;
 
     const copyButton = document.createElement("button");
@@ -42,9 +45,14 @@ function displayResults(restaurants) {
       copyToClipboard(name, country, region, address);
     });
 
-    listItem.appendChild(copyButton);
+    const buttonContainer = document.createElement("div");
+    buttonContainer.className = "mt-3";
+    buttonContainer.appendChild(copyButton);
+
+    listItem.appendChild(buttonContainer);
     restaurantList.appendChild(listItem);
 
+    // Dodanie efektu animacji
     setTimeout(() => {
       listItem.classList.add("active");
     }, index * 100);

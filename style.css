@@ -103,6 +103,10 @@ body, html {
     flex: 1;
 
 }
+#map {
+    height: 300px;
+    width: 100%;
+  }
 
 
 
