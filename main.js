@@ -12,6 +12,13 @@ function displayResults(restaurants) {
     const name = restaurant.properties.name;
     const country = restaurant.properties.country;
     const region = restaurant.properties.district;
+    const amenity = restaurant.properties.datasource.raw.amenity;
+    const cuisine = restaurant.properties.datasource.raw.cuisine;
+    const openingHours = restaurant.properties.datasource.raw.opening_hours;
+    const website = restaurant.properties.datasource.raw.website;
+    const phoneNum= restaurant.properties.datasource.raw.phone;
+    const wheelchair= restaurant.properties.datasource.raw.wheelchair;
+
 
     const addressLine1 = restaurant.properties.address_line1 || "";
     const addressLine2 = restaurant.properties.address_line2 || "";
@@ -168,13 +175,24 @@ function copyToClipboard(name, country, region, address) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("searchBtn").addEventListener("click", function () {
+  const searchButton = document.getElementById("searchBtn")
+  if (searchButton) {
+    searchButton.addEventListener("click", function () {
     const cityInput = document.getElementById("cityInput").value;
-    searchPlaces(cityInput);
-  });
+    console.log(cityInput);
 
-  document.getElementById("cityInput").addEventListener("input", function () {
-    const cityInput = this.value;
-    geocodeAutocomplete(cityInput);
+    // Assuming searchPlaces is a synchronous function
+    searchPlaces(cityInput); 
+
+    // Construct the URL with the query parameter
+    window.location.href = 'index2.html?q=' + encodeURIComponent(cityInput);
   });
+  }
 });
+
+  
+
+  // document.getElementById("cityInput").addEventListener("input", function () {
+  //   const cityInput = this.value;
+  //   geocodeAutocomplete(cityInput);
+  // });
