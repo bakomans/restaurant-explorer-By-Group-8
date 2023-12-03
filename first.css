@@ -236,13 +236,18 @@ footer {
 
 #about h2 {
     color: beige;
+    margin-bottom: 25px;
 }
 
 #about p {
-    color: #495057;
+    color: #333;
     margin-bottom: 20px;
 }
-
+#about p img {
+    float: left;
+    margin-right: 10px;
+    width: 75px;
+}
 #restaurantList {
     list-style-type: none;
     padding: 0;
