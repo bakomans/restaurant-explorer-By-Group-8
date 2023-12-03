@@ -51,10 +51,28 @@ function displayResults(restaurants) {
 
     const copyButton = document.createElement("button");
     copyButton.className = "btn btn-outline-secondary copy-btn";
-    copyButton.innerHTML = "Share with Friends";
+    copyButton.innerHTML = "View restaurant";
     copyButton.addEventListener("click", function () {
-      copyToClipboard(name, address);
+
+      // ---Save restaurant data to parse into restaurantPage.html
+      const restaurantData = {
+        name: name,
+        address: address,
+        cuisine: cuisine,
+        website: website,
+        phoneNum: phoneNum,
+        wheelchair: wheelchair,
+        amenity: amenity,
+        openingHours: openingHours }
+
+      localStorage.setItem('selectedRestaurant', JSON.stringify(restaurantData));
+      window.location.href = "restaurantPage.html";
+
+    // -------------------------------------------------------
     });
+
+
+  
 
     const buttonContainer = document.createElement("div");
     buttonContainer.className = "mt-3";
@@ -68,8 +86,11 @@ function displayResults(restaurants) {
       listItem.classList.add("active");
     }, index * 100);
   });
-}
 
+
+  
+}
+// -------- click event on search button to save search and redirect to index2
 document.addEventListener("DOMContentLoaded", function () {
   const searchButton = document.getElementById("searchBtn");
   if (searchButton) {
@@ -81,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+// ------------------------------------------------
 
 async function geocodeCity(city) {
   const apiKey = "ed0c087649204f6db62717517ed42adc";
@@ -211,19 +233,3 @@ function copyToClipboard(name, country, region, address) {
   showModal("Restaurant information copied to clipboard!");
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const searchButton = document.getElementById("searchBtn");
-  if (searchButton) {
-    searchButton.addEventListener("click", function () {
-      const cityInput = document.getElementById("cityInput").value;
-      console.log(cityInput);    
-      searchPlaces(cityInput);
-      window.location.href = "index2.html?q=" + encodeURIComponent(cityInput);
-    });
-  }
-});
-
-// document.getElementById("cityInput").addEventListener("input", function () {
-//   const cityInput = this.value;
-//   geocodeAutocomplete(cityInput);
-// });

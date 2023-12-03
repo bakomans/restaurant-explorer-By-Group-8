@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="rest-style.css">
+    <!-- <link rel="stylesheet" href="first.css"> -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Foodie-Mate</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-orange">
+            <a class="navbar-brand" href="#"><img src="media/restaurant.png">Foodie-Mate</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,11 +30,15 @@
                     </li>
                 </ul>
             </div>
+            <div class="profile-icon">
+                <a class="profile-link" href="#">
+                <img src="media/profile.png" alt="Profile Icon"></a>
+            </div>
         </nav>
-
+        
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-              <h1 class="display-4">Restaurant name here</h1>
+              <h1 id="restaurantName">Restaurant name here</h1>
               <p class="lead">cuisine here</p>
             </div>
           </div>
@@ -86,7 +91,7 @@
                 <ul class="list-group list-group-flush">
                 <li class="list-group-item">additional Information         
                 </li>
-                <li class="address">Address</li>
+                <li id="restaurantAddress">Address</li>
                 <li class="hours">hours</li>
                 <li class="cuisine">cuisine</li>
                 <li class="website">website</li>
@@ -94,12 +99,21 @@
                 </ul>
             </div>
         </div>
+
+ <footer class="bg-orange text-white text-center py-3">
+    <div class="container">
+       <p>&copy; 2023 Foodie-Mate. All rights reserved.</p>
+    </div>
+</footer>
    
     <script src="https://kit.fontawesome.com/0ca5c28108.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="main.js"></script>
+    <script src="qp.js"></script>
+    <script src="restaurantPage.js"></script>
+    <!-- <script src="map.js" defer></script> -->
 </body>
 </html>
 
