@@ -1,14 +1,9 @@
-// const urlParams = new URLSearchParams(window.location.search);
-// const myParam = urlParams.get('myParam');
-
-// document.querySelector("#query-param-div").textContent = "The value of the parameter myParam is " + myParam;
 
 document.addEventListener("DOMContentLoaded", function () {
   const urlParams = new URLSearchParams(window.location.search);
   const cityInput = urlParams.get("q");
   if (cityInput) {
-    document.querySelector("#query-param-div").textContent =
-      "The value of the parameter is " + cityInput;
+    document.querySelector("#query-param-div").textContent =  " "
     searchPlaces(cityInput);
   }
 });
