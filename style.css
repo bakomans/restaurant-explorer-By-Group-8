@@ -29,6 +29,15 @@ body, html {
     gap: 20px;
     margin: 10px;
 }
+.btn-group button {
+    color: beige;
+}
+
+footer {
+    background-color: orange; 
+    color: #ffffff; 
+    margin: 10px;
+}
 .video-container {
     position: relative;
     height: 100vh;
