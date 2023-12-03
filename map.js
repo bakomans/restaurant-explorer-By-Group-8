@@ -58,6 +58,9 @@ async function searchPlaces(city) {
                 
                 clearMapMarkers();
 
+                const bounds = L.geoJSON(result).getBounds();
+                mymap.fitBounds(bounds);
+
                 
                 addMarkers(result.features);
 
