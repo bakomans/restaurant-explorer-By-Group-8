@@ -11,6 +11,8 @@ function displayResults(restaurants) {
   restaurants.forEach((restaurant, index) => {
     const name = restaurant.properties.name || "Unknown Name";
     const image = restaurant.properties.datasource.raw.image || "Unknown Image"
+    const details = restaurant.properties.details[4]
+    const facilities = restaurant.properties.details[3]
     const country = restaurant.properties.country || "Unknown Country";
     const region = restaurant.properties.district || "Unknown Region";
     const amenity =
@@ -39,7 +41,7 @@ function displayResults(restaurants) {
       
       <div class="info-line">${image}</div>
       <div class="info-line"><strong>Address:</strong> ${address}</div>
-      
+     
       <div class="info-line"><strong>Cuisine:</strong> ${cuisine}</div>
     
       <div class="info-line"><strong>Website:</strong> <a href="${website}" target="_blank">${website}</a></div>

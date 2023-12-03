@@ -4,28 +4,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
 }).addTo(mymap);
 
-document.addEventListener("DOMContentLoaded", function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    const cityInput = urlParams.get("q");
 
-    if (cityInput) {
-        document.querySelector("#query-param-div").textContent =
-            "The value of the parameter is " + cityInput;
-        searchPlaces(cityInput);
-    }
-
-    const searchButton = document.getElementById("searchButton");
-
-    searchButton.addEventListener("click", function () {
-        const urlParams = new URLSearchParams(window.location.search);
-        const cityInput = urlParams.get("q");
-        if (cityInput) {
-            document.querySelector("#query-param-div").textContent =
-                "The value of the parameter is " + cityInput;
-            searchPlaces(cityInput);
-        }
-    });
-});
 
 async function searchPlaces(city) {
     try {
