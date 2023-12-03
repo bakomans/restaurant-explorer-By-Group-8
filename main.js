@@ -10,6 +10,7 @@ function displayResults(restaurants) {
 
   restaurants.forEach((restaurant, index) => {
     const name = restaurant.properties.name || "Unknown Name";
+    const image = restaurant.properties.datasource.raw.image || "Unknown Image"
     const country = restaurant.properties.country || "Unknown Country";
     const region = restaurant.properties.district || "Unknown Region";
     const amenity =
@@ -35,22 +36,22 @@ function displayResults(restaurants) {
       "list-group-item card d-flex justify-content-between align-items-center";
     listItem.innerHTML = `<div class="restaurant-info">
       <h5 class="card-title text-center">${name}</h5>
-      <div class="info-line"><strong>Country:</strong> ${country}</div>
-      <div class="info-line"><strong>Region:</strong> ${region}</div>
+      
+      <div class="info-line">${image}</div>
       <div class="info-line"><strong>Address:</strong> ${address}</div>
-      <div class="info-line"><strong>Amenity:</strong> ${amenity}</div>
+      
       <div class="info-line"><strong>Cuisine:</strong> ${cuisine}</div>
-      <div class="info-line"><strong>Opening Hours:</strong> ${openingHours}</div>
+    
       <div class="info-line"><strong>Website:</strong> <a href="${website}" target="_blank">${website}</a></div>
       <div class="info-line"><strong>Phone:</strong> ${phoneNum}</div>
-      <div class="info-line"><strong>Wheelchair:</strong> ${wheelchair}</div>
+      
     </div>`;
 
     const copyButton = document.createElement("button");
     copyButton.className = "btn btn-outline-secondary copy-btn";
     copyButton.innerHTML = "Share with Friends";
     copyButton.addEventListener("click", function () {
-      copyToClipboard(name, country, region, address);
+      copyToClipboard(name, address);
     });
 
     const buttonContainer = document.createElement("div");
