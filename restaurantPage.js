@@ -18,18 +18,23 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         document.getElementById('amenity').textContent = restaurantData.amenity || 'Suburb Address not available';
         
-        const websiteElements = document.querySelectorAll('.website');
-            websiteElements.forEach(element => {
-            element.textContent = restaurantData.website || 'website not available';
-        });
+        const websiteElements = document.querySelectorAll('.website a'); // Selecting the anchor tags
+        websiteElements.forEach(element => {
+            if (restaurantData.website) {
+                element.href = restaurantData.website;
+                element.textContent = restaurantData.website; // Or any other meaningful text
+                element.target = "_blank"; // Optional: to open the link in a new tab
+            } else {
+                element.textContent = 'Website not available';
+                element.removeAttribute('href'); // Remove the href attribute if the website is not available
+              }
+            }
+        );
        
-        document.getElementById('website').textContent = restaurantData.website || 'website not available';
-        // document.getElementById('suburb').textContent = restaurantData.suburb || 'Suburb Address not available';
-        document.getElementById('hours').textContent = restaurantData.hours || 'Hours not available';
+        document.getElementById('hours').textContent = restaurantData.openingHours || 'Hours not available';
         document.getElementById('phone').textContent = restaurantData.phoneNum || 'Suburb Address not available';
         document.getElementById('wheelchair').textContent = restaurantData.wheelchair;
-        // Uncomment and complete for other data fields like cuisine, website, phone number, etc.
-        // document.getElementById('restaurantCuisine').textContent = restaurantData.cuisine || 'Cuisine not available';
+       
         let latitude = restaurantData.latitude
         let longitude = restaurantData.longitude
          // document.getElementById('restaurantAddress').textContent = restaurantData.address || 'Address not available';

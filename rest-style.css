@@ -10,6 +10,55 @@
     
 }
 
+.jumbotron h1 {
+    font-size: 60px
+}
+
+.jumbotron p {
+    font-size: 30px;
+    font-weight: 500px;
+}
+
+
+
+.jumbotron {
+    background-image: url('media/rest-3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: -25px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    color: orange;
+    text-shadow: 5px 2px 4px rgba(0,0,0,.9);
+
+}
+/* .custom-img-class {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+#share-button {
+    color: white;
+    background-color: orangered;
+    border-radius: 10px;
+    width: 200px;
+    border: 1px solid orangered;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#signup .btn-orange {
+    background-color: orange;
+    border-color: orange;
+    color: white;
+}
+
+#share-button:hover {
+    background-color: orange;
+    border-color: orange;
+    color: white;
+}
 
 
 .card, .side-panel {
@@ -20,15 +69,24 @@
     box-sizing: border-box;
 }
 
+.card-header {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    /* font-style: bold; */
+    background-color: rgb(252, 226, 160);
+}
+
 .card2 {
     width: 400px;
     margin-left: 50px;
-    border:olive;
+    /* border:olive; */
 }
 
 .card {
    min-width: 300px;
    margin-left: 300px;
+   /* background-color: beige; */
 
 }
 
@@ -41,7 +99,7 @@
     width: 100%;
     padding-top: 25px;
     padding-bottom: 10px;
-
+    margin-bottom: 5px;
 }
 
 footer {
@@ -49,7 +107,7 @@ footer {
     bottom: 0;
     height: 100px;
     width: 100%;
-    bottom: -526px;
+    bottom: -2050px;
 }
 
 ul {
@@ -66,13 +124,45 @@ ul {
     padding-right: 5px;
 }
 
+.card-header-map {
+    border-bottom: none;
+}
 
 .custom-map {
     height: 330px; /* or any other height */
     width: 375px;
-    margin-left: -22px;
+    border-bottom: none;
     /* Add more styling as needed */
 }
+
+
+.rating {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+}
+
+.list-group-reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the reviews */
+    width: 100%; /* Set the width to 100% of the container */
+    margin-top: 50px;
+    border: 1px solid #cccccc; /* Adjust the color and thickness as needed */
+    padding: 15px; /* Add some padding inside the border */
+    margin-bottom: 20px;
+    background-color: rgb(250, 240, 231)
+}
+
+.review {
+    width: 100%; /* Each review takes the full width of the container */
+    margin-bottom: 20px; /* Add some space between reviews */
+}
+
+.list-group-item {
+    border-bottom: none; /* Removes the bottom border */
+}
+
 
 @media (max-width: 768px) {
     .container-layout {

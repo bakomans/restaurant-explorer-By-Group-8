@@ -39,8 +39,8 @@
         
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-              <h1 id="restaurantName">Restaurant name here</h1>
-              <p class="cuisine">cuisine here</p>
+              <h1 id="restaurantName"></h1>
+              <p class="cuisine"><strong></strong></p>
             </div>
           </div>
 
@@ -50,7 +50,7 @@
         <div class="container-layout">
             <div class="card">
                 <div class="card-header">
-                Information
+                <strong>Information</strong>
                 </div>
                 <ul class="list-group list-group-flush">
                 <li class="list-group-item">
@@ -70,21 +70,156 @@
                     </div>
 
                     
-                    <div id="website" class="website">
-                        <p>Make a Booking!(Website)</p>
+                    <div class="website">
+                        <a href="#" id="website-link">Website</a>
                     </div>
 
                 
                 </li>
-                <li class="list-group-item">Details of restaurant???</li>
-                <li class="list-group-item">photo??</li>
-                <li class="list-group-item">fake reviews??</li>
+                <li class="list-group-item"><button id="share-button">Write a review</button></li>
+                <li class="list-group-item"><button id="share-button">Recommend to a friend</button></li>
+                <li class="list-group-reviews"><strong>Recent Reviews</strong>
+                    <br>
+                    <div class="review">
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <p class="review-author">Review by Jamie L.</p>
+                            <p class="review-content">Absolutely loved this place! The ambiance is cozy and welcoming, and the staff are incredibly friendly. The grilled salmon was cooked to perfection. Will definitely be back!</p>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                            </div>
+                            <p class="review-author">Review by Sarah T.</p>
+                            <p class="review-content">Five stars for the amazing service! The waitstaff went above and beyond to ensure we had a great experience. The pasta dishes are a must-try – so flavorful!</p>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <p class="review-author">Review by Martin R.</p>
+                            <p class="review-content">A hidden gem! The fusion cuisine here is exceptional, and the chef clearly knows their way around bold flavors. Highly recommend the spicy beef tacos</p>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <p class="review-author">Review by Emily K.</p>
+                            <p class="review-content">I had the best birthday dinner here! The staff made it really special, and the chocolate lava cake was divine. A great spot for celebrations.</p>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <p class="review-author">Review by Alex D.</p>
+                            <p class="review-content">Impressed by the vegan options available here. The veggie burger and sweet potato fries were delicious, and the smoothies are top-notch</p>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <p class="review-author">Review by Rachel B.</p>
+                            <p class="review-content">A wonderful dining experience! The wine selection is excellent and pairs beautifully with the gourmet cheese platter. Perfect for a date night</p>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                            </div>
+                            <p class="review-author">Review by Michael S.</p>
+                            <p class="review-content">This place never disappoints! I'm a regular, and whether it's for brunch or dinner, the food is always fantastic. The pancakes are my weekend treat</p>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <p class="review-author">Review by Karen W.</p>
+                            <p class="review-content">Lovely atmosphere and fantastic sushi. The sushi chef is a master at his craft. The Dragon Roll and the Tempura Shrimp are my favorites</p>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-regular fa-star"></i>
+                               
+                            </div>
+                            <p class="review-author">Review by Omar J.</p>
+                            <p class="review-content">Great location, right by the waterfront. Enjoyed the seafood platter and the refreshing cocktails. The live music on weekends adds to the vibe</p>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                                <i class="fa-solid fa-star" style="color: #f3dd35;"></i>
+                            </div>
+                            <p class="review-author">Review by Lisa G.</p>
+                            <p class="review-content">An excellent choice for vegetarians. Tried the quinoa salad and the mushroom risotto, and both were outstanding. The fresh juices are also a great touch</p>
+                        </div>
+                    </div>
+
+                </li>
+                <li></li>
                 </ul>
             </div>
 
             <div class="side-panel">
                 <div class="card2">
-                <div class="card-header">
+                <div class="card-header-map">
                     <div class="col-md-6">
                         <div id="map" class="custom-map"></div>
                     </div>
@@ -102,7 +237,9 @@
                 <li class="cuisine">cuisine</li>
                 <br>
                 <li><strong>Website</strong></li>
-                <li class="website">website</li>
+                <li class="website">
+                    <a href="#" id="website-link">Website</a>
+                </li>
                 <br>
                 <li><strong>Phone number</strong></li>
                 <li id="phone">phone number</li>

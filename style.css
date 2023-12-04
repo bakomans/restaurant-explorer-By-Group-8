@@ -108,7 +108,7 @@ footer {
 }
 
 .list-group-item.card:hover .copy-btn {
-    background-color: #0056b3; 
+    background-color: orangered; 
     transform: scale(1.05); 
 }
 /* #map {
