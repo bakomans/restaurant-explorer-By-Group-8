@@ -19,8 +19,7 @@ function displayResults(restaurants) {
       restaurant.properties.datasource.raw.amenity || "Unknown Amenity";
     const cuisine =
       restaurant.properties.datasource.raw.cuisine || "Unknown Cuisine";
-    const openingHours =
-      restaurant.properties.datasource.raw.opening_hours ||
+    const openingHours = restaurant.properties.datasource.raw.opening_hours ||
       "Unknown Opening Hours";
     const website = restaurant.properties.datasource.raw.website || "#";
     const phoneNum =
