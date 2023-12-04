@@ -28,7 +28,8 @@ function displayResults(restaurants) {
     const wheelchair =
       restaurant.properties.datasource.raw.wheelchair ||
       "Wheelchair information not available";
-
+    const latitude = restaurant.properties.lat
+    const longitude = restaurant.properties.lon
     const addressLine1 = restaurant.properties.address_line1 || "";
     const addressLine2 = restaurant.properties.address_line2 || "";
     const address = `${addressLine1}, ${addressLine2}`.trim();
@@ -63,7 +64,10 @@ function displayResults(restaurants) {
         phoneNum: phoneNum,
         wheelchair: wheelchair,
         amenity: amenity,
-        openingHours: openingHours }
+        openingHours: openingHours,
+        latitude: latitude, 
+        longitude: longitude
+      }
 
       localStorage.setItem('selectedRestaurant', JSON.stringify(restaurantData));
       window.location.href = "restaurantPage.html";
