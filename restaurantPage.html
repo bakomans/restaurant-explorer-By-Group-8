@@ -40,7 +40,7 @@
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
               <h1 id="restaurantName">Restaurant name here</h1>
-              <p class="lead">cuisine here</p>
+              <p class="cuisine">cuisine here</p>
             </div>
           </div>
 
@@ -65,14 +65,12 @@
                         <div><p>501 reviews</p></div>
                     </div>
                     
-                    <div class="culinary">
-                        <p>culinary</p>
+                    <div id="amenity">
+                        <p>amenity</p>
                     </div>
 
-                    <div>
-                        <p>facilities</p>
-                    </div>
-                    <div class="rest-website">
+                    
+                    <div id="website" class="website">
                         <p>Make a Booking!(Website)</p>
                     </div>
 
@@ -92,22 +90,38 @@
                     </div>
                 </div>
                 <ul class="list-group list-group-flush">
-                <li class="list-group-item">additional Information         
+                <li class="list-group-item"><strong>Additional Information</strong>         
                 </li>
+                <li><strong>Address</strong></li>
                 <li id="restaurantAddress">Address</li>
-                <li class="hours">hours</li>
+                <br>
+                <li><strong>Opening Hours</strong></li>
+                <li id="hours">hours</li>
+                <br>
+                <li><strong>Type of cusine</strong></li>
                 <li class="cuisine">cuisine</li>
+                <br>
+                <li><strong>Website</strong></li>
                 <li class="website">website</li>
-                <li class="phone">phone number</li>
+                <br>
+                <li><strong>Phone number</strong></li>
+                <li id="phone">phone number</li>
+                <br>
+                <li><strong>Wheelchair access</strong></li>
+                <li id="wheelchair"></li>
+
+                
                 </ul>
             </div>
         </div>
-
         <footer class="bg-orange text-white text-center py-3">
             <div class="footer">
                 <p>&copy; 2023 Foodie-Mate. All rights reserved.</p>
             </div>
         </footer>
+
+    </body>
+  
    
     <script src="https://kit.fontawesome.com/0ca5c28108.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -120,7 +134,7 @@
     <script src="restaurantPage.js"></script>
     
     <!-- <script src="map.js" defer></script> -->
-</body>
+
 
 </html>
 

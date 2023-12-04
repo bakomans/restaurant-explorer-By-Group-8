@@ -33,6 +33,7 @@ function displayResults(restaurants) {
     const addressLine1 = restaurant.properties.address_line1 || "";
     const addressLine2 = restaurant.properties.address_line2 || "";
     const address = `${addressLine1}, ${addressLine2}`.trim();
+    const suburb = restaurant.properties.suburb;
 
     const listItem = document.createElement("li");
     listItem.className =
@@ -66,7 +67,9 @@ function displayResults(restaurants) {
         amenity: amenity,
         openingHours: openingHours,
         latitude: latitude, 
-        longitude: longitude
+        longitude: longitude,
+        suburb: suburb,
+
       }
 
       localStorage.setItem('selectedRestaurant', JSON.stringify(restaurantData));

@@ -12,6 +12,22 @@ document.addEventListener("DOMContentLoaded", function () {
         // Update your HTML elements with the data
         document.getElementById('restaurantName').textContent = restaurantData.name || 'Name not available';
         document.getElementById('restaurantAddress').textContent = restaurantData.address || 'Address not available';
+        const cuisineElements = document.querySelectorAll('.cuisine');
+            cuisineElements.forEach(element => {
+            element.textContent = restaurantData.cuisine || 'Cuisine not available';
+        });
+        document.getElementById('amenity').textContent = restaurantData.amenity || 'Suburb Address not available';
+        
+        const websiteElements = document.querySelectorAll('.website');
+            websiteElements.forEach(element => {
+            element.textContent = restaurantData.website || 'website not available';
+        });
+       
+        document.getElementById('website').textContent = restaurantData.website || 'website not available';
+        // document.getElementById('suburb').textContent = restaurantData.suburb || 'Suburb Address not available';
+        document.getElementById('hours').textContent = restaurantData.hours || 'Hours not available';
+        document.getElementById('phone').textContent = restaurantData.phoneNum || 'Suburb Address not available';
+        document.getElementById('wheelchair').textContent = restaurantData.wheelchair;
         // Uncomment and complete for other data fields like cuisine, website, phone number, etc.
         // document.getElementById('restaurantCuisine').textContent = restaurantData.cuisine || 'Cuisine not available';
         let latitude = restaurantData.latitude

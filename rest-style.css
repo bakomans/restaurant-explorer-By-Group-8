@@ -1,14 +1,16 @@
 .container-layout {
     display: flex;
     width: 100%; /* Full width of the viewport */
-    margin-left: 200px;
-    margin-right: 200px;
+    /* margin-left: 200px; */
+    /* margin-right: 200px; */
     /* margin-right: 40px; */
     justify-content: center;
     /* box-sizing: border-box; */
     /* padding-bottom: 200px; */
     
 }
+
+
 
 .card, .side-panel {
    
@@ -26,9 +28,9 @@
 
 .card {
    min-width: 300px;
+   margin-left: 300px;
+
 }
-
-
 
 .list-group-item {
     display: flex;
@@ -42,6 +44,17 @@
 
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    bottom: -526px;
+}
+
+ul {
+    list-style-type: none;
+}
 
 
 .rating {
@@ -53,16 +66,6 @@
     padding-right: 5px;
 }
 
-
-
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    margin-left: -400px;
-    margin-bottom: -200px;
-    /* Other styling */
-}
 
 .custom-map {
     height: 330px; /* or any other height */
@@ -84,8 +87,11 @@ footer {
     }
 
     .card2 {
-        
         margin-left: 5px;
         
+    }
+
+    .card {
+        margin-left: 2px;
     }
 }
