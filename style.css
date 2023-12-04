@@ -111,11 +111,11 @@ footer {
     background-color: #0056b3; 
     transform: scale(1.05); 
 }
-#map {
+/* #map {
     height: 300px;
     width: 100%;
     margin-bottom: 20px;
-}
+} */
 /* styling for index2.html */
 .wrapper {
     display: flex;
@@ -146,10 +146,10 @@ footer {
     flex: 1;
 
 }
-#map {
+/* #map {
     height: 300px;
     width: 100%;
-  }
+  } */
 
 
 

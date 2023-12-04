@@ -6,7 +6,7 @@
     /* margin-right: 40px; */
     justify-content: center;
     /* box-sizing: border-box; */
-    
+    /* padding-bottom: 200px; */
     
 }
 
@@ -53,6 +53,24 @@
     padding-right: 5px;
 }
 
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-left: -400px;
+    margin-bottom: -200px;
+    /* Other styling */
+}
+
+.custom-map {
+    height: 330px; /* or any other height */
+    width: 375px;
+    margin-left: -22px;
+    /* Add more styling as needed */
+}
+
 @media (max-width: 768px) {
     .container-layout {
         flex-direction: column; /* Stack the flex items vertically */
@@ -70,12 +88,4 @@
         margin-left: 5px;
         
     }
-}
-
-
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Other styling */
 }
