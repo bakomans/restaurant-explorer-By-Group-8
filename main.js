@@ -158,7 +158,7 @@ async function searchPlaces(city) {
     console.log("Bounding Box:", boundingBox);
 
     const apiKey = "ecc25b5fd6b74c3784e00bd9905ca698";
-    const placesApiUrl = `https://api.geoapify.com/v2/places?categories=catering.restaurant&filter=rect:${boundingBox.left},${boundingBox.bottom},${boundingBox.right},${boundingBox.top}&limit=10&apiKey=${apiKey}`;
+    const placesApiUrl = `https://api.geoapify.com/v2/places?categories=catering.restaurant&filter=rect:${boundingBox.left},${boundingBox.bottom},${boundingBox.right},${boundingBox.top}&limit=20&apiKey=${apiKey}`;
 
     console.log("Places API URL:", placesApiUrl);
 
