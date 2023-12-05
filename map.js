@@ -4,9 +4,70 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
 }).addTo(mymap);
 
+document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    cityInput = urlParams.get("q"); 
+    
+    if (cityInput) {
+        searchPlaces(cityInput);
+    }
+});
+
+document.getElementById('italian-button').addEventListener('click', function() {
+    console.log("City Input:", cityInput); // Check what value cityInput holds
+    if (cityInput) {
+        searchPlaces(cityInput, "italian");
+    } else {
+        console.log("City not specified or no Italian cuisines");
+    }
+});
+document.getElementById('chinese-button').addEventListener('click', function() {
+    console.log("City Input:", cityInput); // Check what value cityInput holds
+    if (cityInput) {
+        searchPlaces(cityInput, "chinese");
+    } else {
+        console.log("City not specified or no chinese cuisines");
+    }
+});
+
+document.getElementById('indian-button').addEventListener('click', function() {
+    console.log("City Input:", cityInput); // Check what value cityInput holds
+    if (cityInput) {
+        searchPlaces(cityInput, "indian");
+    } else {
+        console.log("City not specified or no indian cuisines");
+    }
+});
+
+document.getElementById('thai-button').addEventListener('click', function() {
+    console.log("City Input:", cityInput); // Check what value cityInput holds
+    if (cityInput) {
+        searchPlaces(cityInput, "thai");
+    } else {
+        console.log("City not specified or no thai cuisines");
+    }
+});
+
+document.getElementById('pizza-button').addEventListener('click', function() {
+    console.log("City Input:", cityInput); // Check what value cityInput holds
+    if (cityInput) {
+        searchPlaces(cityInput, "pizza");
+    } else {
+        console.log("City not specified or no pizza cuisines");
+    }
+});
+
+document.getElementById('mexican-button').addEventListener('click', function() {
+    console.log("City Input:", cityInput); // Check what value cityInput holds
+    if (cityInput) {
+        searchPlaces(cityInput, "mexican");
+    } else {
+        console.log("City not specified or no mexican cuisines");
+    }
+});
 
 
-async function searchPlaces(city) {
+async function searchPlaces(city, cuisineType = "") {
     try {
         const location = await geocodeCity(city);
         console.log(location);
@@ -20,9 +81,9 @@ async function searchPlaces(city) {
         };
 
         console.log("Bounding Box:", boundingBox);
-
+        let cuisineQuery = cuisineType ? `.${cuisineType}` : '';
         const apiKey = "ecc25b5fd6b74c3784e00bd9905ca698";
-        const placesApiUrl = `https://api.geoapify.com/v2/places?categories=catering.restaurant&filter=rect:${boundingBox.left},${boundingBox.bottom},${boundingBox.right},${boundingBox.top}&limit=10&apiKey=${apiKey}`;
+        const placesApiUrl = `https://api.geoapify.com/v2/places?categories=catering.restaurant${cuisineQuery}&filter=rect:${boundingBox.left},${boundingBox.bottom},${boundingBox.right},${boundingBox.top}&limit=10&apiKey=${apiKey}`;
 
         console.log("Places API URL:", placesApiUrl);
 

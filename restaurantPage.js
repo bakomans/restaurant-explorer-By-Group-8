@@ -54,3 +54,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+document.getElementById('rec-friend-button').addEventListener('click', function() {
+    // Create a temporary text element
+    var textArea = document.createElement("textarea");
+    textArea.value = window.location.href; // Assign the URL to the text area
+    document.body.appendChild(textArea); // Append the text area to the document
+    textArea.focus();
+    textArea.select(); // Select the text
+
+    try {
+        // Copy the text inside the text field
+        var successful = document.execCommand('copy');
+        var msg = successful ? 'successful' : 'unsuccessful';
+        console.log('Copying text command was ' + msg);
+    } catch (err) {
+        console.log('Oops, unable to copy');
+    }
+
+    document.body.removeChild(textArea); // Remove the temporary element
+});
+

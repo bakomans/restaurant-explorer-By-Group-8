@@ -136,3 +136,4 @@ function copyToClipboard(name, country, region, address) {
 
   showModal("Restaurant information copied to clipboard!");
 }
+

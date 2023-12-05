@@ -33,7 +33,7 @@ function displayResults(restaurants) {
     const addressLine2 = restaurant.properties.address_line2 || "";
     const address = `${addressLine1}, ${addressLine2}`.trim();
     const suburb = restaurant.properties.suburb;
-
+    const id = restaurant.properties.place_id;
     const listItem = document.createElement("li");
     listItem.className =
       "list-group-item card d-flex justify-content-between align-items-center";
@@ -68,8 +68,10 @@ function displayResults(restaurants) {
         latitude: latitude, 
         longitude: longitude,
         suburb: suburb,
-
+        id: id
       }
+
+      
 
       localStorage.setItem('selectedRestaurant', JSON.stringify(restaurantData));
       window.location.href = "restaurantPage.html";
