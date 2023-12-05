@@ -38,6 +38,14 @@ footer {
     color: #ffffff; 
     margin: 10px;
 }
+.restaurant-info {
+    position: relative;
+}
+.restaurant-image {
+    max-width: 80px;
+    height: 80px;
+
+}
 .video-container {
     position: relative;
     height: 100vh;

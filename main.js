@@ -10,11 +10,11 @@ function displayResults(restaurants) {
 
   restaurants.forEach((restaurant, index) => {
     const name = restaurant.properties.name || "Unknown Name";
-    const image = restaurant.properties.datasource.raw.image || "Unknown Image"
+    const imageData = restaurant.properties.datasource.raw.image || "media/image-unavailable.png"
     const details = restaurant.properties.details[4]
-    const facilities = restaurant.properties.details[3]
-    const country = restaurant.properties.country || "Unknown Country";
-    const region = restaurant.properties.district || "Unknown Region";
+    // const facilities = restaurant.properties.details[3]
+    // const country = restaurant.properties.country || "Unknown Country";
+    // const region = restaurant.properties.district || "Unknown Region";
     const amenity =
       restaurant.properties.datasource.raw.amenity || "Unknown Amenity";
     const cuisine =
@@ -39,7 +39,9 @@ function displayResults(restaurants) {
     listItem.innerHTML = `<div class="restaurant-info">
       <h5 class="card-title text-center">${name}</h5>
       
-      <div class="info-line">${image}</div>
+      <div class="info-line">
+        <img src="${imageData}" alt="${name}" class="restaurant-image">
+      </div>
       <div class="info-line"><strong>Address:</strong> ${address}</div>
      
       <div class="info-line"><strong>Cuisine:</strong> ${cuisine}</div>
