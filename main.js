@@ -4,17 +4,19 @@ function showModal(message) {
   $("#myModal").modal("show");
 }
 
+var defaultImages = ["media/image-1.jpg", "media/image-2.jpg", "media/image-3.jpg", "media/image-4.jpg", "media/image-5.jpg", "media/image-6.jpg", "media/image-7.jpg", "media/image-8.jpg", "media/image-9.jpg", "media/image-10.jpg"];
+
 function displayResults(restaurants) {
   const restaurantList = document.getElementById("restaurantList");
   restaurantList.innerHTML = "";
 
   restaurants.forEach((restaurant, index) => {
     const name = restaurant.properties.name || "Unknown Name";
-    const imageData = restaurant.properties.datasource.raw.image || "media/image-unavailable.png"
+    const imageData = restaurant.properties.datasource.raw.image || getDefaultImage(index);
     const details = restaurant.properties.details[4]
-    // const facilities = restaurant.properties.details[3]
-    // const country = restaurant.properties.country || "Unknown Country";
-    // const region = restaurant.properties.district || "Unknown Region";
+    const facilities = restaurant.properties.details[3]
+    const country = restaurant.properties.country || "Unknown Country";
+    const region = restaurant.properties.district || "Unknown Region";
     const amenity =
       restaurant.properties.datasource.raw.amenity || "Unknown Amenity";
     const cuisine =
@@ -35,7 +37,7 @@ function displayResults(restaurants) {
 
     const listItem = document.createElement("li");
     listItem.className =
-      "list-group-item card d-flex justify-content-between align-items-center";
+      "list-group-item card d-flex justify-content-between";
     listItem.innerHTML = `<div class="restaurant-info">
       <h5 class="card-title text-center">${name}</h5>
       
@@ -73,7 +75,10 @@ function displayResults(restaurants) {
     // -------------------------------------------------------
     });
 
-
+function getDefaultImage(index) {
+  var defaultIndex = index % defaultImages.length;
+  return defaultImages[defaultIndex];
+}
   
 
     const buttonContainer = document.createElement("div");

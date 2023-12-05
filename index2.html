@@ -34,24 +34,20 @@
         </div>
     </nav>
     
-    <div class="input-group mb-3">
-        <input type="text" id="cuisineSearch" class="form-control" placeholder="Search for Cuisine">
-    <div class="input-group-append">
-        <button class="btn btn-outline-warning" type="button" id="searchCuisineBtn">Search</button>
-    </div>
-        <!-- <button type="button" class="btn btn-warning rounded cuisine-btn" data-cuisine="italian">Italian</button>
+    <div class="btn-group">
+        <button type="button" class="btn btn-warning rounded cuisine-btn" data-cuisine="italian">Italian</button>
         <button type="button" class="btn btn-warning rounded cuisine-btn" data-cuisine="chinese">Chinese</button>
         <button type="button" class="btn btn-warning rounded cuisine-btn" data-cuisine="vietnamese">Vietnamese</button>
         <button type="button" class="btn btn-warning rounded cuisine-btn" data-cuisine="indian">Indian</button>
         <button type="button" class="btn btn-warning rounded cuisine-btn" data-cuisine="japanese">japanese</button>
         <button type="button" class="btn btn-warning rounded cuisine-btn" data-cuisine="thai">Thai</button>
-        <button type="button" class="btn btn-warning rounded cuisine-btn" data-cuisine="french">French</button> -->
+        <button type="button" class="btn btn-warning rounded cuisine-btn" data-cuisine="french">French</button>
     </div>
 
 
     <div id="query-param-div"></div>
 
-    <div class="container">
+    <!-- <div class="container">
         <h2>Restaurant Search Results</h2>
         <div class="row">
             <div class="col-md-6">
@@ -59,6 +55,21 @@
             </div>
             <div class="col-md-6">
                 <div id="map" style="height: 400px;"></div>
+            </div>
+        </div>
+    </div> -->
+    <div class="container">
+        <div class="row">
+            <div class="col-l-6 mb-4">
+                <div class="restaurant-list-container">
+                    <h2>Restaurant Search Results</h2>
+                    <ul id="restaurantList" class="list-group"></ul>
+                </div>
+            </div>
+            <div class="col-l-6 mb-4">
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
             </div>
         </div>
     </div>
