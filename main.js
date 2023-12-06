@@ -43,8 +43,7 @@ function displayResults(restaurants) {
       <div class="info-line"><strong>Address:</strong> ${address}</div>
       <div class="info-line"><strong>Cuisine:</strong> ${cuisine}</div>
 
-      <div class="info-line"><strong>Website:</strong> <a href="${website}" target="_blank">${website}</a></div>
-      <div class="info-line"><strong>Phone:</strong> ${phoneNum}</div>
+      
     </div>`;
   
     const copyButton = document.createElement("button");
