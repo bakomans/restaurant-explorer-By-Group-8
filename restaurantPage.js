@@ -54,23 +54,101 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-document.getElementById('rec-friend-button').addEventListener('click', function() {
-    // Create a temporary text element
-    var textArea = document.createElement("textarea");
-    textArea.value = window.location.href; // Assign the URL to the text area
-    document.body.appendChild(textArea); // Append the text area to the document
-    textArea.focus();
-    textArea.select(); // Select the text
+// document.getElementById('rec-friend-button').addEventListener('click', function() {
+//     // Create a temporary text element
+//     var textArea = document.createElement("textarea");
+//     textArea.value = window.location.href; // Assign the URL to the text area
+//     document.body.appendChild(textArea); // Append the text area to the document
+//     textArea.focus();
+//     textArea.select(); // Select the text
 
-    try {
-        // Copy the text inside the text field
-        var successful = document.execCommand('copy');
-        var msg = successful ? 'successful' : 'unsuccessful';
-        console.log('Copying text command was ' + msg);
-    } catch (err) {
-        console.log('Oops, unable to copy');
+//     try {
+//         // Copy the text inside the text field
+//         var successful = document.execCommand('copy');
+//         var msg = successful ? 'successful' : 'unsuccessful';
+//         console.log('Copying text command was ' + msg);
+//     } catch (err) {
+//         console.log('Oops, unable to copy');
+//     }
+
+//     document.body.removeChild(textArea); // Remove the temporary element
+// });
+
+$(function(){
+
+    $('.dropdown-item').click(function(){
+      var value = $(this).data('value');
+      $('.form-control').val(value);
+    });
+    
+  });
+
+  document.getElementById('review-button').addEventListener('click', function() {
+    const reviewContainer = document.getElementById('review-container');
+
+    // Create a textarea for the review
+    const textArea = document.createElement('textarea');
+    textArea.placeholder = 'Write your review here...';
+    textArea.id = 'review-text'; // Assign an ID for easy retrieval
+    reviewContainer.appendChild(textArea);
+
+    const storedData = localStorage.getItem('selectedRestaurant');
+    const restaurantData = storedData ? JSON.parse(storedData) : {};
+
+    const existingReviewsStr = localStorage.getItem('userReviews');
+    const existingReviews = existingReviewsStr ? JSON.parse(existingReviewsStr) : [];
+
+
+
+
+    // Create a select dropdown for the score
+    const scoreSelect = document.createElement('select');
+    scoreSelect.id = 'review-score'; // Assign an ID for easy retrieval
+    for (let i = 1; i <= 5; i++) {
+        const option = document.createElement('option');
+        option.value = i;
+        option.textContent = i;
+        scoreSelect.appendChild(option);
     }
+    reviewContainer.appendChild(scoreSelect);
 
-    document.body.removeChild(textArea); // Remove the temporary element
+    // Add a submit button for the review
+    const submitButton = document.createElement('button');
+    submitButton.textContent = 'Submit Review';
+    submitButton.addEventListener('click', function() {
+        // Retrieve review text and selected score
+        
+        const reviewText = textArea.value;
+        const reviewScore = scoreSelect.value;
+
+        // Create a review object
+        const newReview = {
+            restaurantName: restaurantData.name || 'Name not available',
+            restaurantAddress: restaurantData.address || 'Address not available',
+            text: reviewText,
+            score: reviewScore,
+            timestamp: new Date().toISOString() // Optional: to keep track of when the review was submitted
+        };
+
+        // Save the review in localStorage
+         existingReviews.push(newReview);
+
+    // Save the updated reviews array back to local storage
+    localStorage.setItem('userReviews', JSON.stringify(existingReviews));
+
+        // Provide feedback to the user
+        alert('Review submitted successfully!');
+
+        // Disable the review button and submission button
+        document.getElementById('review-button').disabled = true;
+        submitButton.disabled = true;
+
+        // Optionally, clear the textarea and reset the score selection
+        textArea.value = '';
+        scoreSelect.value = '1';
+    });
+    reviewContainer.appendChild(submitButton);
+
+    // Disable the review button after clicking
+    this.disabled = true;
 });
-
