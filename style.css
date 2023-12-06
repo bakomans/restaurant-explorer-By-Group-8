@@ -19,20 +19,41 @@ body, html {
     border-radius: 50%;
 }
 .navbar {
-    margin-bottom: 25px;
+    margin-bottom: 0;
+}
+
+.jumbotron {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative;
+    height: 400px;  
+}
+.jumbotron .lead {
+    margin-top: 30px;
+}
+.jumbotron .display-4 {
+    margin-top: 20px;
+}
+.bg-image {
+    background-image: url(media/image-10.jpg);
 }
 .btn-group {
-    margin-top: 50px; 
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    gap: 20px;
-    margin: 10px;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* Place the buttons above the background image */
 }
-.btn-group button {
-    color: beige;
-    padding: 5px 10px;
-    width: 1px;
+.btn-warning {
+    background-color: rgba(255, 255, 255, 0.7); /* Blended background color */
+    color: #333; /* Button text color */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add a smooth transition effect */
+    margin: 15px;
+}
+.btn-warning:hover {
+    background-color: #ffc107; /* Background color on hover */
+    color: #333; /* Text color on hover */
 }
 
 footer {
