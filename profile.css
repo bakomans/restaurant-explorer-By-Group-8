@@ -8,10 +8,6 @@
     text-shadow: 5px 2px 4px rgba(0,0,0,.9);
 }
 
-/* h2 {
-    color: orange;
-    /* text-shadow: 5px 2px 4px rgba(0,0,0,.9); */
-/*  */
 
 #share-button{
     color: white;
@@ -20,8 +16,7 @@
     width: 200px;
     border: 1px solid orangered;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    /* display: flex;
-    justify-content: center; */
+
 }
 
 

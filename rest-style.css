@@ -142,7 +142,6 @@ ul {
 
 .rating {
     display: flex;
-    /* justify-content: space-between; */
 }
 
 .stars {
@@ -154,38 +153,38 @@ ul {
 }
 
 .custom-map {
-    height: 330px; /* or any other height */
+    height: 330px; 
     width: 375px;
     border-bottom: none;
-    /* Add more styling as needed */
+    
 }
 
 
 .rating {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column; 
     align-items: center;
 }
 
 .list-group-reviews {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center align the reviews */
-    width: 100%; /* Set the width to 100% of the container */
+    align-items: center; 
+    width: 100%; 
     margin-top: 50px;
-    border: 1px solid #cccccc; /* Adjust the color and thickness as needed */
-    padding: 15px; /* Add some padding inside the border */
+    border: 1px solid #cccccc; 
+    padding: 15px; 
     margin-bottom: 20px;
     background-color: rgb(250, 240, 231)
 }
 
 .review {
-    width: 100%; /* Each review takes the full width of the container */
-    margin-bottom: 20px; /* Add some space between reviews */
+    width: 100%; 
+    margin-bottom: 20px; 
 }
 
 .list-group-item {
-    border-bottom: none; /* Removes the bottom border */
+    border-bottom: none; 
 }
 
 #map {
@@ -198,13 +197,13 @@ ul {
 
 @media (max-width: 768px) {
     .container-layout {
-        flex-direction: column; /* Stack the flex items vertically */
-        margin-left: 5px; /* Smaller right padding for narrow screens */
-        /* align-items: center; Cller right padding for narrow screens */
+        flex-direction: column; 
+        margin-left: 5px; 
+        
     }
 
     .card, .side-panel {
-        width: 100%;/* Optional: Adjust max-width for smaller screens */
+        width: 100%;
         flex-basis: auto;
     }
 
