@@ -188,6 +188,13 @@ ul {
     border-bottom: none; /* Removes the bottom border */
 }
 
+#map {
+    height: 330px;
+    width: 375px;
+    border-bottom: none;
+    /* position: absolute; */
+    
+}
 
 @media (max-width: 768px) {
     .container-layout {

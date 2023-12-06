@@ -38,15 +38,17 @@ document.addEventListener("DOMContentLoaded", function () {
         let latitude = restaurantData.latitude
         let longitude = restaurantData.longitude
          // document.getElementById('restaurantAddress').textContent = restaurantData.address || 'Address not available';
-         var mymap = L.map('map').setView([latitude, longitude], 13); // Replace with actual restaurant coordinates
- 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-         attribution: '© OpenStreetMap contributors'
-        }).addTo(mymap);
- 
-     // Add a marker for the restaurant
-        L.marker([latitude, longitude]).addTo(mymap); // Replace with actual restaurant coordinates
-    
+         if (!mymap) {
+            mymap = L.map('map').setView([latitude, longitude], 13);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(mymap);
+            L.marker([latitude, longitude]).addTo(mymap);
+        } else {
+            // If the map is already initialized, just update its view and marker
+            mymap.setView([latitude, longitude], 13);
+            L.marker([latitude, longitude]).addTo(mymap);
+        }
     } else {
         // Handle the case where no data is found (e.g., display a message)
         console.log("No restaurant data found in local storage.");
