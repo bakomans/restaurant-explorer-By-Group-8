@@ -1,0 +1,21 @@
+#share-button{
+    color: white;
+    background-color: orangered;
+    border-radius: 10px;
+    width: 200px;
+    border: 1px solid orangered;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    /* display: flex;
+    justify-content: center; */
+}
+
+
+#share-button:hover {
+    background-color: orange;
+    border-color: orange;
+    color: white;
+}
+
+.list-group-item {
+    margin-bottom: 15px;
+}
