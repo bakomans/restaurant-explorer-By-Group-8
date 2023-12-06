@@ -72,7 +72,8 @@ body, html {
     top: 25%;
     left: 50%;
     transform: translateX(-50%);
-    color: white;
+    color: orange;
+    text-shadow: 5px 2px 4px rgba(0,0,0,.9);
     z-index: 1;
     font-weight: 600;
 }
