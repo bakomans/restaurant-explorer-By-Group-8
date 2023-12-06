@@ -1,5 +1,9 @@
+
 // --------- Takes parsed data from main-js
 document.addEventListener("DOMContentLoaded", function () {
+
+    
+
   const urlParams = new URLSearchParams(window.location.search);
   const cityInput = urlParams.get("q");
   if (cityInput) {
@@ -42,11 +46,13 @@ async function geocodeCity(city) {
   }
 }
 // ----------------------Map------------------------------
-var mymap = L.map('map').setView([0, 0], 2);
+if (document.getElementById('map')) {
+    var mymap = L.map('map').setView([0, 0], 2);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(mymap);
+}
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-}).addTo(mymap);
 
 document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
@@ -59,58 +65,74 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // filter buttons selection-----------------------------
 
-document.getElementById('italian-button').addEventListener('click', function() {
-    console.log("City Input:", cityInput); // Check what value cityInput holds
-    if (cityInput) {
-        searchPlaces(cityInput, "italian");
-    } else {
-        console.log("City not specified or no Italian cuisines");
-    }
-});
-document.getElementById('chinese-button').addEventListener('click', function() {
-    console.log("City Input:", cityInput); // Check what value cityInput holds
-    if (cityInput) {
-        searchPlaces(cityInput, "chinese");
-    } else {
-        console.log("City not specified or no chinese cuisines");
-    }
-});
 
-document.getElementById('indian-button').addEventListener('click', function() {
-    console.log("City Input:", cityInput); // Check what value cityInput holds
-    if (cityInput) {
-        searchPlaces(cityInput, "indian");
-    } else {
-        console.log("City not specified or no indian cuisines");
-    }
-});
+if (document.getElementById('italian-button')) {
+    document.getElementById('italian-button').addEventListener('click', function() {
+        console.log("City Input:", cityInput); // Check what value cityInput holds
+        if (cityInput) {
+            searchPlaces(cityInput, "italian");
+        } else {
+            console.log("City not specified or no Italian cuisines");
+        }
+    });
+}
 
-document.getElementById('thai-button').addEventListener('click', function() {
-    console.log("City Input:", cityInput); // Check what value cityInput holds
-    if (cityInput) {
-        searchPlaces(cityInput, "thai");
-    } else {
-        console.log("City not specified or no thai cuisines");
-    }
-});
 
-document.getElementById('pizza-button').addEventListener('click', function() {
-    console.log("City Input:", cityInput); // Check what value cityInput holds
-    if (cityInput) {
-        searchPlaces(cityInput, "pizza");
-    } else {
-        console.log("City not specified or no pizza cuisines");
-    }
-});
 
-document.getElementById('mexican-button').addEventListener('click', function() {
-    console.log("City Input:", cityInput); // Check what value cityInput holds
-    if (cityInput) {
-        searchPlaces(cityInput, "mexican");
-    } else {
-        console.log("City not specified or no mexican cuisines");
-    }
-});
+if (document.getElementById('chinese-button')) {
+    document.getElementById('chinese-button').addEventListener('click', function() {
+        console.log("City Input:", cityInput); 
+        if (cityInput) {
+            searchPlaces(cityInput, "chinese");
+        } else {
+            console.log("City not specified or no Chinese cuisines");
+        }
+    });
+}
+
+if (document.getElementById('indian-button')) {
+    document.getElementById('indian-button').addEventListener('click', function() {
+        console.log("City Input:", cityInput);
+        if (cityInput) {
+            searchPlaces(cityInput, "indian");
+        } else {
+            console.log("City not specified or no Indian cuisines");
+        }
+    });
+}
+
+if (document.getElementById('thai-button')) {
+    document.getElementById('thai-button').addEventListener('click', function() {
+        console.log("City Input:", cityInput);
+        if (cityInput) {
+            searchPlaces(cityInput, "thai");
+        } else {
+            console.log("City not specified or no Thai cuisines");
+        }
+    });
+}
+
+if (document.getElementById('pizza-button')) {
+    document.getElementById('pizza-button').addEventListener('click', function() {
+        console.log("City Input:", cityInput);
+        if (cityInput) {
+            searchPlaces(cityInput, "pizza");
+        } else {
+            console.log("City not specified or no Pizza cuisines");
+        }
+    });
+}
+
+if (document.getElementById('mexican-button')) {
+    document.getElementById('mexican-button').addEventListener('click', function() {
+        console.log("City Input:", cityInput);
+        if (cityInput) {
+            searchPlaces(cityInput, "mexican");
+        } else {
+            console.log("City not specified or no Mexican cuisines");
+        }
+    });
+}
 
 // ---------------- Search for places-------------- 
 async function searchPlaces(city, cuisineType = "") {
