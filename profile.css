@@ -1,3 +1,18 @@
+.jumbotron-fluid {
+    margin-top: -25px;
+    background-image: url('media/rest2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: orange;
+    text-shadow: 5px 2px 4px rgba(0,0,0,.9);
+}
+
+/* h2 {
+    color: orange;
+    /* text-shadow: 5px 2px 4px rgba(0,0,0,.9); */
+/*  */
+
 #share-button{
     color: white;
     background-color: orangered;
@@ -18,4 +33,5 @@
 
 .list-group-item {
     margin-bottom: 15px;
+    background-color: rgb(250, 240, 231)
 }
