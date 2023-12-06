@@ -92,13 +92,15 @@ footer {
     width: 50%;
     height: 100%;
     margin-top: 20px;
-    align-items: flex-end;
+    margin-right: 150px;
+    margin-left: 100px;
+
   }
   
   #map {
-    height: 100%; /* Make the map fill its container */
+    height: 450px; /* Make the map fill its container */
     position: fixed;
-    width: 100%;
+    width: 500px;
     z-index: 1; /* Ensure the map is above other elements */
   }
 
