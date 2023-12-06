@@ -22,10 +22,10 @@ body, html {
     border-radius: 50%;
 }
 
-#restaurantList {
+/* #restaurantList {
     list-style-type: none;
     padding: 0;
-}
+} */
 
 .video-container {
     position: relative;
@@ -135,7 +135,7 @@ footer {
     transform: scale(1.05);
 }
 
-.list-group-item {
+/* .list-group-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -161,7 +161,7 @@ footer {
 .restaurant-info strong {
     font-weight: bold;
     color: black;
-}
+} */
 
 #about {
     margin-top: 50px;
@@ -188,7 +188,7 @@ footer {
     margin-right: 10px;
     width: 75px;
 }
-
+/* 
 #restaurantList {
     list-style-type: none;
     padding: 0;
@@ -222,8 +222,8 @@ footer {
 .container {
     max-width: 800px;
     margin: 0 auto;
-}
-
+} */
+/* 
 .list-group-item.card {
     width: 100%;
     margin-bottom: 15px;
@@ -247,4 +247,4 @@ footer {
     color: #fff;
     background-color: #007bff;
     margin-top: 5px;
-}
+} */

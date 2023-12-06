@@ -37,7 +37,7 @@ function displayResults(restaurants) {
 
     const listItem = document.createElement("li");
     listItem.className =
-      "list-group-item card d-flex justify-content-between";
+      "list-group-item card d-flex justify-content-between mb-4 ml-0 mr-10";
     listItem.innerHTML = `<div class="restaurant-info">
       <h5 class="card-title text-center">${name}</h5>
       
@@ -48,13 +48,11 @@ function displayResults(restaurants) {
      
       <div class="info-line"><strong>Cuisine:</strong> ${cuisine}</div>
     
-      <div class="info-line"><strong>Website:</strong> <a href="${website}" target="_blank">${website}</a></div>
-      <div class="info-line"><strong>Phone:</strong> ${phoneNum}</div>
       
     </div>`;
 
     const copyButton = document.createElement("button");
-    copyButton.className = "btn btn-outline-secondary copy-btn";
+    copyButton.className = "btn btn-outline-secondary copy-btn view-restaurant-button";
     copyButton.innerHTML = "View restaurant";
     copyButton.addEventListener("click", function () {
 
