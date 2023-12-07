@@ -1,11 +1,12 @@
 .jumbotron-fluid {
-    margin-top: -25px;
+    /* margin-top: -25px; */
     background-image: url('media/rest2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: orange;
     text-shadow: 5px 2px 4px rgba(0,0,0,.9);
+    height: 200px;
 }
 
 
@@ -29,4 +30,44 @@
 .list-group-item {
     margin-bottom: 15px;
     background-color: rgb(250, 240, 231)
+}
+
+/* Style for the share container that appears on click */
+.share-container {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: none; /* Initially hidden */
+}
+
+/* Style for the username input and message textarea */
+.share-container input[type='text'],
+.share-container textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Style for the message textarea */
+.share-container textarea {
+    height: 80px; /* Set a fixed height for the textarea */
+}
+
+/* Style for the submit button */
+.share-container button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.share-container button:hover {
+    background-color: #0056b3;
 }
