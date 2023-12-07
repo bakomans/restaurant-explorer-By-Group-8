@@ -112,7 +112,7 @@ footer {
     flex: 1; /* Allow the map to grow to fill the available space */
     width: 50%;
     height: 100%;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-right: 150px;
     margin-left: 100px;
 
@@ -120,7 +120,7 @@ footer {
   
   #map {
     height: 450px; /* Make the map fill its container */
-    position: fixed;
+    /* position: fixed; */
     width: 500px;
     z-index: 1; /* Ensure the map is above other elements */
   }
