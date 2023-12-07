@@ -16,7 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
             cuisineElements.forEach(element => {
             element.textContent = restaurantData.cuisine || 'Cuisine not available';
         });
-        document.getElementById('amenity').textContent = restaurantData.amenity || 'Suburb Address not available';
+
+        function capitalizeFirstLetter(string) {
+            if (!string) return string;
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        document.getElementById('amenity').textContent = restaurantData.amenity ? capitalizeFirstLetter(restaurantData.amenity) : 'Suburb Address not available';
         
         const websiteElements = document.querySelectorAll('.website a'); // Selecting the anchor tags
         websiteElements.forEach(element => {
