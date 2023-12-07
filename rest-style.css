@@ -26,7 +26,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-top: -25px;
+    /* margin-top: -25px; */
     padding-top: 200px;
     padding-bottom: 200px;
     color: orange;
@@ -61,6 +61,15 @@
     border-color: orange;
     color: white;
 }
+
+#rec-friend-button:hover {
+    background-color: orange;
+    border-color: orange;
+    color: white;
+}
+
+
+
 
 #review-container textarea {
     width: 100%;
@@ -102,6 +111,7 @@
    min-width: 300px;
    margin-left: 300px;
    /* background-color: beige; */
+    border-width: 1px;
 
 }
 
@@ -112,10 +122,12 @@
     /* margin-right: 100px; */
     align-items: center;
     width: 100%;
-    padding-top: 25px;
+    padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 5px;
+    border-width: 0px;
     
+    /* background-color: rgb(252, 226, 160); */
 }
 
 #list-group-review {
@@ -171,10 +183,10 @@ ul {
     flex-direction: column;
     align-items: center; 
     width: 100%; 
-    margin-top: 50px;
+   
     border: 1px solid #cccccc; 
     padding: 15px; 
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     background-color: rgb(250, 240, 231)
 }
 
