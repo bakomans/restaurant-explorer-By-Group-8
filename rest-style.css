@@ -83,7 +83,35 @@
 
 #review-container button {
     margin-top: 10px;
+    margin-left: 10px;
 }
+
+#share-container textarea {
+    width: 80%;
+    margin-top: 10px;
+    margin-left: 85px;
+}
+
+#share-container select {
+    margin-top: 10px;
+    width: 60px;
+}
+
+#share-container button {
+    /* margin-top: 10px; */
+    margin-bottom: 10px;
+    margin-left: 368px;
+}
+
+
+#friend-username {
+    margin-left: 337px;
+}
+
+/* #share-message {
+    width: 400px;
+} */
+
 
 .card, .side-panel {
    
@@ -227,4 +255,42 @@ ul {
     .card {
         margin-left: 2px;
     }
+
+    #review-container textarea {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    #review-container select {
+        margin-top: 10px;
+        width: 60px;
+    }
+    
+    #review-container button {
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+    
+    #share-container textarea {
+        width: 80%;
+        margin-top: 10px;
+        margin-left: 0px
+    }
+    
+    #share-container select {
+        margin-top: 10px;
+        width: 60px;
+    }
+    
+    #share-container button {
+        /* margin-top: 10px; */
+        margin-bottom: 10px;
+        margin-left: 0px;
+    }
+    
+    
+    #friend-username {
+        margin-left: 0px;
+    }
+    
 }

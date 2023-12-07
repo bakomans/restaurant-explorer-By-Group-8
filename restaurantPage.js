@@ -160,3 +160,47 @@ $(function(){
     // Disable the review button after clicking
     this.disabled = true;
 });
+
+
+document.getElementById('rec-friend-button').addEventListener('click', function() {
+    const shareContainer = document.getElementById('share-container');
+
+    // Create a text input for the friend's username
+    const usernameInput = document.createElement('input');
+    usernameInput.placeholder = 'Enter your friend\'s username';
+    usernameInput.id = 'friend-username'; // Assign an ID for easy retrieval
+    usernameInput.type = 'text';
+    shareContainer.appendChild(usernameInput);
+
+    // Create a textarea for the message
+    const messageTextArea = document.createElement('textarea');
+    messageTextArea.placeholder = 'Write your message here...';
+    messageTextArea.id = 'share-message'; // Assign an ID for easy retrieval
+    shareContainer.appendChild(messageTextArea);
+
+    // Add a submit button for sharing
+    const shareButton = document.createElement('button');
+    shareButton.textContent = 'Share with Friend';
+    shareButton.addEventListener('click', function() {
+        // Retrieve username and message
+        const friendUsername = usernameInput.value;
+        const shareMessage = messageTextArea.value;
+
+        // Logic to handle sharing (e.g., saving, sending to server, etc.)
+        // ...
+
+        alert('Shared successfully with ' + friendUsername + '!');
+
+        // Disable the share button and submission button
+        document.getElementById('share-button').disabled = true;
+        shareButton.disabled = true;
+
+        // Optionally, clear the input fields
+        usernameInput.value = '';
+        messageTextArea.value = '';
+    });
+    shareContainer.appendChild(shareButton);
+
+    // Disable the share button after clicking
+    this.disabled = true;
+});
