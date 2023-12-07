@@ -119,10 +119,11 @@ footer {
   }
   
   #map {
+
     height: 450px; /* Make the map fill its container */
     /* position: fixed; */
     width: 500px;
-    z-index: 1; /* Ensure the map is above other elements */
+    /* z-index: 1;  */
   }
 
 /* .video-container {
@@ -197,8 +198,6 @@ footer {
 .list-group-item.card:hover .copy-btn {
     background-color: orangered; 
     transform: scale(1.05); 
-} */
-
 
 
 
