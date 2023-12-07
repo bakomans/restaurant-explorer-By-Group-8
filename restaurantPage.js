@@ -62,25 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-// document.getElementById('rec-friend-button').addEventListener('click', function() {
-//     // Create a temporary text element
-//     var textArea = document.createElement("textarea");
-//     textArea.value = window.location.href; // Assign the URL to the text area
-//     document.body.appendChild(textArea); // Append the text area to the document
-//     textArea.focus();
-//     textArea.select(); // Select the text
 
-//     try {
-//         // Copy the text inside the text field
-//         var successful = document.execCommand('copy');
-//         var msg = successful ? 'successful' : 'unsuccessful';
-//         console.log('Copying text command was ' + msg);
-//     } catch (err) {
-//         console.log('Oops, unable to copy');
-//     }
-
-//     document.body.removeChild(textArea); // Remove the temporary element
-// });
 
 $(function(){
 
@@ -145,7 +127,8 @@ $(function(){
     localStorage.setItem('userReviews', JSON.stringify(existingReviews));
 
         // Provide feedback to the user
-        alert('Review submitted successfully!');
+        document.getElementById('feedbackModalBody').textContent = 'Review submitted successfully!';
+        $('#feedbackModal').modal('show');
 
         // Disable the review button and submission button
         document.getElementById('review-button').disabled = true;
@@ -189,7 +172,8 @@ document.getElementById('rec-friend-button').addEventListener('click', function(
         // Logic to handle sharing (e.g., saving, sending to server, etc.)
         // ...
 
-        alert('Shared successfully with ' + friendUsername + '!');
+        document.getElementById('feedbackModalBody').textContent = 'Shared successfully with ' + friendUsername + '!';
+    $('#feedbackModal').modal('show');
 
         // Disable the share button and submission button
         document.getElementById('share-button').disabled = true;

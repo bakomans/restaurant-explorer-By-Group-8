@@ -47,7 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 shareButton.textContent = 'Share with Friend';
                 shareButton.addEventListener('click', function() {
                     // Logic to handle sharing
-                    alert('Shared successfully with ' + usernameInput.value + '!');
+                    const friendUsername = usernameInput.value;
+
+                    // Update the modal content with the username
+                    document.getElementById('feedbackModalBody').textContent = 'Shared successfully with ' + friendUsername + '!';
+                    $('#feedbackModal').modal('show');
                     // Clear the input fields
                     usernameInput.value = '';
                     messageTextArea.value = '';
@@ -62,3 +66,4 @@ document.addEventListener('DOMContentLoaded', function() {
         reviewsSection.textContent = 'No reviews available.';
     }
 });
+
