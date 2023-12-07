@@ -14,7 +14,9 @@ Welcome to Foodie-Mate, where culinary exploration meets personalized convenienc
 
 ## Project Structure
 
-All project images are stored in the 'media' folder.
+![Alt text](image.png)
+![Alt text](image-1.png)
+![Alt text](image-2.png)
 
 ## Licensing
 
