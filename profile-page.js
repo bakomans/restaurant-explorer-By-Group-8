@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <p>Review: ${review.text}</p>
             <p>Score: ${review.score} / 5</p>
             <p>Submitted on: ${new Date(review.timestamp).toLocaleString()}</p>
-            <button class="share-button" id="share-button" data-index="${index}">Share to a friend</button>
+            <button class="share-button" id="share-button" data-index="${index}">Recommend to a mate</button>
             <div class="share-container" id="share-container-${index}" style="display: none;"></div>
             </div>
             `;
